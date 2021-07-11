@@ -63,14 +63,14 @@
         container.className = "unity-mobile";
         config.devicePixelRatio = 0;
       }
-      loadingCover.style.display = "none";
+      loadingCover.style.display = "";
 
       const script = document.createElement("script");
       script.src = loaderUrl;
       script.onload = () => {
         createUnityInstance(canvas, config, (progress) => {
           spinner.style.display = "none";
-          progressBarEmpty.style.display = "";
+          progressBarEmpty.style.display = "none";
           progressBarFull.style.width = `${100 * progress}%`;
         }).then((unityInstance) => {
           loadingCover.style.display = "none";
